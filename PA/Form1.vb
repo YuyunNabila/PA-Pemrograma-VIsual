@@ -37,7 +37,7 @@ Public Class Form1
         (Screen.PrimaryScreen.WorkingArea.Height - targetForm.Height) \ 2
     )
 
-        ' Animasi transisi
+        
         AnimateWindow(Me.Handle, 300, AW_BLEND Or AW_HIDE)
         targetForm.Show()
         AnimateWindow(targetForm.Handle, 300, AW_BLEND Or AW_ACTIVATE)
@@ -77,19 +77,16 @@ Public Class Form1
 
         btn.Region = New Region(path)
 
-        ' Tambah event hover
         AddHandler btn.MouseEnter, AddressOf Button_Hover
         AddHandler btn.MouseLeave, AddressOf Button_Normal
     End Sub
 
 
-    ' Saat hover (masuk)
     Private Sub Button_Hover(sender As Object, e As EventArgs)
         Dim btn As Button = CType(sender, Button)
         btn.BackColor = Color.FromArgb(167, 108, 95) ' Merah pastel
     End Sub
 
-    ' Saat hover keluar (normal lagi)
     Private Sub Button_Normal(sender As Object, e As EventArgs)
         Dim btn As Button = CType(sender, Button)
         btn.BackColor = Color.FromArgb(190, 204, 152) ' Hijau pastel lagi

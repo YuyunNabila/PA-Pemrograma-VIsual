@@ -35,14 +35,12 @@ Public Class Form4
     Private Const AW_ACTIVATE As Integer = &H20000
 
     Private Sub AnimateTransition(targetForm As Form)
-        ' Menentukan posisi tengah layar
         targetForm.StartPosition = FormStartPosition.Manual
         targetForm.Location = New Point(
         (Screen.PrimaryScreen.WorkingArea.Width - targetForm.Width) \ 2,
         (Screen.PrimaryScreen.WorkingArea.Height - targetForm.Height) \ 2
     )
 
-        ' Animasi transisi
         AnimateWindow(Me.Handle, 300, AW_BLEND Or AW_HIDE)
         targetForm.Show()
         AnimateWindow(targetForm.Handle, 300, AW_BLEND Or AW_ACTIVATE)
@@ -90,7 +88,6 @@ Public Class Form4
         Dim username As String = SessionManager.Username
         Dim tipeUser As String = SessionManager.TipeUser
 
-        ' Cek apakah user_id valid
         If user_id = 0 Then
             MessageBox.Show("Anda belum login atau sesi telah berakhir.", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             AnimateTransition(Form1) ' Pindah ke halaman login
@@ -115,7 +112,6 @@ Public Class Form4
             btn.Cursor = Cursors.Hand
         Next
 
-        ' Styling tombol form bunga
         Dim tombolForm() As Button = {btnTambah, btnHapus, btnUpdate, btnBrowseGambar, btnBatal}
 
         For Each btn In tombolForm
@@ -269,17 +265,14 @@ Public Class Form4
     End Sub
 
     Private Sub btnHapus_Click(sender As Object, e As EventArgs) Handles btnHapus.Click
-        ' Pastikan ada data yang dipilih
         If dgvBungaAdmin.CurrentRow Is Nothing Then
             MessageBox.Show("Pilih data yang ingin dihapus.")
             Return
         End If
 
-        ' Konfirmasi penghapusan
         Dim konfirmasi As DialogResult = MessageBox.Show("Yakin ingin menghapus bunga ini?", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
         If konfirmasi = DialogResult.No Then Exit Sub
 
-        ' Ambil ID Bunga dari kolom "bunga_id"
         Dim idBunga As Integer
         Try
             idBunga = CInt(dgvBungaAdmin.CurrentRow.Cells("bunga_id").Value)
@@ -288,7 +281,6 @@ Public Class Form4
             Return
         End Try
 
-        ' Eksekusi penghapusan
         Try
             BukaKoneksi()
             Dim query As String = "DELETE FROM bunga WHERE bunga_id = @bunga_id"
@@ -317,13 +309,11 @@ Public Class Form4
             Return
         End If
 
-        ' Ambil ID bunga dari baris yang dipilih
         Dim bungaId As Integer = CInt(dgvBungaAdmin.CurrentRow.Cells("bunga_id").Value)
 
         Try
             BukaKoneksi()
 
-            ' Ambil nilai lama dari baris DataGridView jika ada textbox kosong
             Dim nama As String = If(String.IsNullOrWhiteSpace(txtNama.Text), dgvBungaAdmin.CurrentRow.Cells("nama").Value.ToString(), txtNama.Text)
             Dim stok As Integer = If(String.IsNullOrWhiteSpace(txtStok.Text), CInt(dgvBungaAdmin.CurrentRow.Cells("stok").Value), Integer.Parse(txtStok.Text))
             Dim harga As Decimal = If(String.IsNullOrWhiteSpace(txtHarga.Text), CDec(dgvBungaAdmin.CurrentRow.Cells("harga").Value), Decimal.Parse(txtHarga.Text))
@@ -417,7 +407,6 @@ Public Class Form4
 
 
     Private Sub btnLogout_Click(sender As Object, e As EventArgs) Handles btnLogout.Click
-        ' Reset session saat logout
         SessionManager.UserID = 0
         SessionManager.Username = ""
         SessionManager.TipeUser = ""

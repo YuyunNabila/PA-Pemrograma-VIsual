@@ -63,19 +63,16 @@ Public Class Form10
     Private Sub Form10_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Encoding.RegisterProvider(CodePagesEncodingProvider.Instance)
 
-        ' Cek session
-        If SessionManager.UserID = 0 Then
+       If SessionManager.UserID = 0 Then
             MessageBox.Show("Anda belum login atau sesi telah berakhir.", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             AnimateTransition(Form1)
             Return
         End If
 
-        ' Setup UI
-        pnlSidebar.BackColor = Color.FromArgb(228, 228, 210)
+         pnlSidebar.BackColor = Color.FromArgb(228, 228, 210)
         pnlSidebar.Dock = DockStyle.Left
         pnlSidebar.Width = 200
 
-        ' Styling tombol menu
         Dim tombolMenu() As Button = {btnTambahBunga, btnDaftarPesanan, btnRiwayatPesanan, btnLogout}
         For Each btn In tombolMenu
             btn.ForeColor = Color.FromArgb(40, 40, 40)
@@ -89,7 +86,6 @@ Public Class Form10
             btn.Cursor = Cursors.Hand
         Next
 
-        ' Setup FlowLayoutPanel
         With flpRiwayat
             .AutoScroll = True
             .WrapContents = True
@@ -106,7 +102,6 @@ Public Class Form10
         keyword = keyword.ToLower().Trim()
         Dim hasVisiblePanel As Boolean = False
 
-        ' Loop hanya pada kontrol bertipe Panel
         For Each ctrl As Control In flpRiwayat.Controls
             If TypeOf ctrl Is Panel Then
                 Dim panel As Panel = DirectCast(ctrl, Panel)
@@ -118,10 +113,8 @@ Public Class Form10
             End If
         Next
 
-        ' Kelola pesan "tidak ditemukan"
         Dim lblNotFound As Label = Nothing
 
-        ' Cari label notifikasi yang sudah ada
         For Each ctrl As Control In flpRiwayat.Controls
             If TypeOf ctrl Is Label AndAlso ctrl.Text.StartsWith("Tidak ditemukan") Then
                 lblNotFound = DirectCast(ctrl, Label)
@@ -150,7 +143,6 @@ Public Class Form10
         Try
             BukaKoneksi()
 
-            ' Query untuk mengambil pesanan yang Disetujui ATAU Ditolak
             Dim query As String = "SELECT td.transaksi_detail_id, t.user_id, u.nama AS nama_user, " &
                       "td.bunga_id, b.nama AS nama_bunga, td.jumlah, td.harga_satuan, " &
                       "td.subtotal, t.tanggal, td.status, b.gambar " &
@@ -220,7 +212,6 @@ Public Class Form10
             .Tag = $"{namaUser.ToLower()} {pesanan.NamaBunga.ToLower()}"
         End With
 
-        ' Gambar bunga
         Dim picBox As New PictureBox()
         With picBox
             .Width = 120
@@ -239,7 +230,6 @@ Public Class Form10
             End Try
         End With
 
-        ' Informasi pesanan (dengan warna teks berbeda untuk status Ditolak)
         Dim lblInfo As New Label()
         With lblInfo
             .Text = $"Pemesan: {namaUser}" & vbCrLf &

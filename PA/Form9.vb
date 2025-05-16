@@ -63,19 +63,16 @@ Public Class Form9
     Private Sub Form9_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Encoding.RegisterProvider(CodePagesEncodingProvider.Instance)
 
-        ' Cek session
         If SessionManager.UserID = 0 Then
             MessageBox.Show("Anda belum login atau sesi telah berakhir.", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             AnimateTransition(Form1)
             Return
         End If
 
-        ' Setup UI
         pnlSidebar.BackColor = Color.FromArgb(228, 228, 210)
         pnlSidebar.Dock = DockStyle.Left
         pnlSidebar.Width = 200
 
-        ' Styling tombol menu
         Dim tombolMenu() As Button = {btnTambahBunga, btnDaftarPesanan, btnRiwayat, btnLogout}
         For Each btn In tombolMenu
             btn.ForeColor = Color.FromArgb(40, 40, 40)
@@ -89,7 +86,6 @@ Public Class Form9
             btn.Cursor = Cursors.Hand
         Next
 
-        ' Setup FlowLayoutPanel
         With flpPesanan
             .AutoScroll = True
             .WrapContents = True
@@ -106,11 +102,9 @@ Public Class Form9
         keyword = keyword.ToLower().Trim()
         Dim hasVisiblePanel As Boolean = False
 
-        ' Loop hanya pada kontrol bertipe Panel
         For Each ctrl As Control In flpPesanan.Controls
             If TypeOf ctrl Is Panel Then
                 Dim panel As Panel = DirectCast(ctrl, Panel)
-                ' Cek apakah nama bunga di Tag panel mengandung keyword
                 If panel.Tag IsNot Nothing Then
                     panel.Visible = panel.Tag.ToString().ToLower().Contains(keyword)
                     If panel.Visible Then hasVisiblePanel = True
@@ -118,10 +112,8 @@ Public Class Form9
             End If
         Next
 
-        ' Kelola pesan "tidak ditemukan"
         Dim lblNotFound As Label = Nothing
 
-        ' Cari label notifikasi yang sudah ada
         For Each ctrl As Control In flpPesanan.Controls
             If TypeOf ctrl Is Label AndAlso ctrl.Text.StartsWith("Tidak ditemukan") Then
                 lblNotFound = DirectCast(ctrl, Label)
@@ -203,13 +195,11 @@ Public Class Form9
             TutupKoneksi()
         End Try
 
-        ' Terapkan filter jika ada teks di txtPencarian
         If txtPencarian.Text <> "" Then
             FilterPesanan(txtPencarian.Text)
         End If
     End Sub
 
-    ' Versi CreatePesananCardAdmin tanpa parameter username
     Private Sub CreatePesananCardAdmin(pesanan As Pesanan, namaUser As String)
         Dim cardPanel As New Panel()
         With cardPanel
@@ -222,7 +212,6 @@ Public Class Form9
             .Tag = $"{namaUser.ToLower()} {pesanan.NamaBunga.ToLower()}"
         End With
 
-        ' Gambar bunga
         Dim picBox As New PictureBox()
         With picBox
             .Width = 125
@@ -241,7 +230,6 @@ Public Class Form9
             End Try
         End With
 
-        ' Informasi pesanan
         Dim lblInfo As New Label()
         With lblInfo
             .Text = $"Pemesan: {namaUser}" & vbCrLf &
@@ -259,7 +247,6 @@ Public Class Form9
             .MaximumSize = New Size(280, 0)
         End With
 
-        ' Tombol Setujui
         Dim btnSetujui As New Button()
         With btnSetujui
             .Text = "Selesaikan"
@@ -293,7 +280,6 @@ Public Class Form9
         Try
             conn.Open()
 
-            ' Update kedua tabel sekaligus
             Dim cmd As New MySqlCommand(
             "UPDATE transaksi_detail td " &
             "JOIN transaksi t ON td.transaksi_id = t.transaksi_id " &

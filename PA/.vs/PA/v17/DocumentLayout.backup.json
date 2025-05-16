@@ -1,0 +1,379 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Asus GK\\Documents\\INFORMATIKA \u002723\\SEMS 4\\PEMVIS\\PA (3)\\PA\\PA\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{C84F6885-67CC-4391-8BE4-D3E1A942D55F}|PA.vbproj|c:\\users\\asus gk\\documents\\informatika \u002723\\sems 4\\pemvis\\pa (3)\\pa\\pa\\form7.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{C84F6885-67CC-4391-8BE4-D3E1A942D55F}|PA.vbproj|solutionrelative:form7.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C84F6885-67CC-4391-8BE4-D3E1A942D55F}|PA.vbproj|c:\\users\\asus gk\\documents\\informatika \u002723\\sems 4\\pemvis\\pa (3)\\pa\\pa\\form7.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{C84F6885-67CC-4391-8BE4-D3E1A942D55F}|PA.vbproj|solutionrelative:form7.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C84F6885-67CC-4391-8BE4-D3E1A942D55F}|PA.vbproj|c:\\users\\asus gk\\documents\\informatika \u002723\\sems 4\\pemvis\\pa (3)\\pa\\pa\\form4.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{C84F6885-67CC-4391-8BE4-D3E1A942D55F}|PA.vbproj|solutionrelative:form4.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C84F6885-67CC-4391-8BE4-D3E1A942D55F}|PA.vbproj|c:\\users\\asus gk\\documents\\informatika \u002723\\sems 4\\pemvis\\pa (3)\\pa\\pa\\form2.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{C84F6885-67CC-4391-8BE4-D3E1A942D55F}|PA.vbproj|solutionrelative:form2.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C84F6885-67CC-4391-8BE4-D3E1A942D55F}|PA.vbproj|c:\\users\\asus gk\\documents\\informatika \u002723\\sems 4\\pemvis\\pa (3)\\pa\\pa\\form3.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{C84F6885-67CC-4391-8BE4-D3E1A942D55F}|PA.vbproj|solutionrelative:form3.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C84F6885-67CC-4391-8BE4-D3E1A942D55F}|PA.vbproj|c:\\users\\asus gk\\documents\\informatika \u002723\\sems 4\\pemvis\\pa (3)\\pa\\pa\\form2.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{C84F6885-67CC-4391-8BE4-D3E1A942D55F}|PA.vbproj|solutionrelative:form2.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C84F6885-67CC-4391-8BE4-D3E1A942D55F}|PA.vbproj|c:\\users\\asus gk\\documents\\informatika \u002723\\sems 4\\pemvis\\pa (3)\\pa\\pa\\form3.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{C84F6885-67CC-4391-8BE4-D3E1A942D55F}|PA.vbproj|solutionrelative:form3.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C84F6885-67CC-4391-8BE4-D3E1A942D55F}|PA.vbproj|c:\\users\\asus gk\\documents\\informatika \u002723\\sems 4\\pemvis\\pa (3)\\pa\\pa\\form4.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{C84F6885-67CC-4391-8BE4-D3E1A942D55F}|PA.vbproj|solutionrelative:form4.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C84F6885-67CC-4391-8BE4-D3E1A942D55F}|PA.vbproj|c:\\users\\asus gk\\documents\\informatika \u002723\\sems 4\\pemvis\\pa (3)\\pa\\pa\\form5.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{C84F6885-67CC-4391-8BE4-D3E1A942D55F}|PA.vbproj|solutionrelative:form5.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C84F6885-67CC-4391-8BE4-D3E1A942D55F}|PA.vbproj|c:\\users\\asus gk\\documents\\informatika \u002723\\sems 4\\pemvis\\pa (3)\\pa\\pa\\form6.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{C84F6885-67CC-4391-8BE4-D3E1A942D55F}|PA.vbproj|solutionrelative:form6.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C84F6885-67CC-4391-8BE4-D3E1A942D55F}|PA.vbproj|c:\\users\\asus gk\\documents\\informatika \u002723\\sems 4\\pemvis\\pa (3)\\pa\\pa\\form9.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{C84F6885-67CC-4391-8BE4-D3E1A942D55F}|PA.vbproj|solutionrelative:form9.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C84F6885-67CC-4391-8BE4-D3E1A942D55F}|PA.vbproj|c:\\users\\asus gk\\documents\\informatika \u002723\\sems 4\\pemvis\\pa (3)\\pa\\pa\\form10.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{C84F6885-67CC-4391-8BE4-D3E1A942D55F}|PA.vbproj|solutionrelative:form10.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C84F6885-67CC-4391-8BE4-D3E1A942D55F}|PA.vbproj|c:\\users\\asus gk\\documents\\informatika \u002723\\sems 4\\pemvis\\pa (3)\\pa\\pa\\form8.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{C84F6885-67CC-4391-8BE4-D3E1A942D55F}|PA.vbproj|solutionrelative:form8.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C84F6885-67CC-4391-8BE4-D3E1A942D55F}|PA.vbproj|c:\\users\\asus gk\\documents\\informatika \u002723\\sems 4\\pemvis\\pa (3)\\pa\\pa\\form1.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{C84F6885-67CC-4391-8BE4-D3E1A942D55F}|PA.vbproj|solutionrelative:form1.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C84F6885-67CC-4391-8BE4-D3E1A942D55F}|PA.vbproj|c:\\users\\asus gk\\documents\\informatika \u002723\\sems 4\\pemvis\\pa (3)\\pa\\pa\\form9.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{C84F6885-67CC-4391-8BE4-D3E1A942D55F}|PA.vbproj|solutionrelative:form9.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C84F6885-67CC-4391-8BE4-D3E1A942D55F}|PA.vbproj|c:\\users\\asus gk\\documents\\informatika \u002723\\sems 4\\pemvis\\pa (3)\\pa\\pa\\form5.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{C84F6885-67CC-4391-8BE4-D3E1A942D55F}|PA.vbproj|solutionrelative:form5.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C84F6885-67CC-4391-8BE4-D3E1A942D55F}|PA.vbproj|c:\\users\\asus gk\\documents\\informatika \u002723\\sems 4\\pemvis\\pa (3)\\pa\\pa\\form6.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{C84F6885-67CC-4391-8BE4-D3E1A942D55F}|PA.vbproj|solutionrelative:form6.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C84F6885-67CC-4391-8BE4-D3E1A942D55F}|PA.vbproj|c:\\users\\asus gk\\documents\\informatika \u002723\\sems 4\\pemvis\\pa (3)\\pa\\pa\\form1.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{C84F6885-67CC-4391-8BE4-D3E1A942D55F}|PA.vbproj|solutionrelative:form1.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C84F6885-67CC-4391-8BE4-D3E1A942D55F}|PA.vbproj|c:\\users\\asus gk\\documents\\informatika \u002723\\sems 4\\pemvis\\pa (3)\\pa\\pa\\form10.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{C84F6885-67CC-4391-8BE4-D3E1A942D55F}|PA.vbproj|solutionrelative:form10.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C84F6885-67CC-4391-8BE4-D3E1A942D55F}|PA.vbproj|c:\\users\\asus gk\\documents\\informatika \u002723\\sems 4\\pemvis\\pa (3)\\pa\\pa\\form8.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{C84F6885-67CC-4391-8BE4-D3E1A942D55F}|PA.vbproj|solutionrelative:form8.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 347,
+          "SelectedChildIndex": 16,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Form1.vb [Design]",
+              "DocumentMoniker": "C:\\Users\\Asus GK\\Documents\\INFORMATIKA \u002723\\SEMS 4\\PEMVIS\\PA (3)\\PA\\PA\\Form1.vb",
+              "RelativeDocumentMoniker": "Form1.vb",
+              "ToolTip": "C:\\Users\\Asus GK\\Documents\\INFORMATIKA \u002723\\SEMS 4\\PEMVIS\\PA (3)\\PA\\PA\\Form1.vb [Design]",
+              "RelativeToolTip": "Form1.vb [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-04-28T13:21:38.731Z",
+              "IsPinned": true,
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Form2.vb [Design]",
+              "DocumentMoniker": "C:\\Users\\Asus GK\\Documents\\INFORMATIKA \u002723\\SEMS 4\\PEMVIS\\PA (3)\\PA\\PA\\Form2.vb",
+              "RelativeDocumentMoniker": "Form2.vb",
+              "ToolTip": "C:\\Users\\Asus GK\\Documents\\INFORMATIKA \u002723\\SEMS 4\\PEMVIS\\PA (3)\\PA\\PA\\Form2.vb [Design]",
+              "RelativeToolTip": "Form2.vb [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-04-28T15:32:12.953Z",
+              "IsPinned": true,
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Form3.vb [Design]",
+              "DocumentMoniker": "C:\\Users\\Asus GK\\Documents\\INFORMATIKA \u002723\\SEMS 4\\PEMVIS\\PA (3)\\PA\\PA\\Form3.vb",
+              "RelativeDocumentMoniker": "Form3.vb",
+              "ToolTip": "C:\\Users\\Asus GK\\Documents\\INFORMATIKA \u002723\\SEMS 4\\PEMVIS\\PA (3)\\PA\\PA\\Form3.vb [Design]",
+              "RelativeToolTip": "Form3.vb [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-04-28T15:36:57.881Z",
+              "IsPinned": true,
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Form4.vb [Design]",
+              "DocumentMoniker": "C:\\Users\\Asus GK\\Documents\\INFORMATIKA \u002723\\SEMS 4\\PEMVIS\\PA (3)\\PA\\PA\\Form4.vb",
+              "RelativeDocumentMoniker": "Form4.vb",
+              "ToolTip": "C:\\Users\\Asus GK\\Documents\\INFORMATIKA \u002723\\SEMS 4\\PEMVIS\\PA (3)\\PA\\PA\\Form4.vb [Design]",
+              "RelativeToolTip": "Form4.vb [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-05-05T12:24:37.937Z",
+              "IsPinned": true,
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Form5.vb [Design]",
+              "DocumentMoniker": "C:\\Users\\Asus GK\\Documents\\INFORMATIKA \u002723\\SEMS 4\\PEMVIS\\PA (3)\\PA\\PA\\Form5.vb",
+              "RelativeDocumentMoniker": "Form5.vb",
+              "ToolTip": "C:\\Users\\Asus GK\\Documents\\INFORMATIKA \u002723\\SEMS 4\\PEMVIS\\PA (3)\\PA\\PA\\Form5.vb [Design]",
+              "RelativeToolTip": "Form5.vb [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-05-05T13:57:43.387Z",
+              "IsPinned": true,
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Form6.vb [Design]",
+              "DocumentMoniker": "C:\\Users\\Asus GK\\Documents\\INFORMATIKA \u002723\\SEMS 4\\PEMVIS\\PA (3)\\PA\\PA\\Form6.vb",
+              "RelativeDocumentMoniker": "Form6.vb",
+              "ToolTip": "C:\\Users\\Asus GK\\Documents\\INFORMATIKA \u002723\\SEMS 4\\PEMVIS\\PA (3)\\PA\\PA\\Form6.vb [Design]",
+              "RelativeToolTip": "Form6.vb [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-05-13T07:56:01.373Z",
+              "IsPinned": true,
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Form7.vb [Design]",
+              "DocumentMoniker": "C:\\Users\\Asus GK\\Documents\\INFORMATIKA \u002723\\SEMS 4\\PEMVIS\\PA (3)\\PA\\PA\\Form7.vb",
+              "RelativeDocumentMoniker": "Form7.vb",
+              "ToolTip": "C:\\Users\\Asus GK\\Documents\\INFORMATIKA \u002723\\SEMS 4\\PEMVIS\\PA (3)\\PA\\PA\\Form7.vb [Design]",
+              "RelativeToolTip": "Form7.vb [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-05-13T07:15:58.27Z",
+              "IsPinned": true,
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Form8.vb [Design]",
+              "DocumentMoniker": "C:\\Users\\Asus GK\\Documents\\INFORMATIKA \u002723\\SEMS 4\\PEMVIS\\PA (3)\\PA\\PA\\Form8.vb",
+              "RelativeDocumentMoniker": "Form8.vb",
+              "ToolTip": "C:\\Users\\Asus GK\\Documents\\INFORMATIKA \u002723\\SEMS 4\\PEMVIS\\PA (3)\\PA\\PA\\Form8.vb [Design]",
+              "RelativeToolTip": "Form8.vb [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-05-13T14:29:55.041Z",
+              "IsPinned": true,
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Form9.vb [Design]",
+              "DocumentMoniker": "C:\\Users\\Asus GK\\Documents\\INFORMATIKA \u002723\\SEMS 4\\PEMVIS\\PA (3)\\PA\\PA\\Form9.vb",
+              "RelativeDocumentMoniker": "Form9.vb",
+              "ToolTip": "C:\\Users\\Asus GK\\Documents\\INFORMATIKA \u002723\\SEMS 4\\PEMVIS\\PA (3)\\PA\\PA\\Form9.vb [Design]",
+              "RelativeToolTip": "Form9.vb [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-05-15T02:33:34.617Z",
+              "IsPinned": true,
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Form10.vb [Design]",
+              "DocumentMoniker": "C:\\Users\\Asus GK\\Documents\\INFORMATIKA \u002723\\SEMS 4\\PEMVIS\\PA (3)\\PA\\PA\\Form10.vb",
+              "RelativeDocumentMoniker": "Form10.vb",
+              "ToolTip": "C:\\Users\\Asus GK\\Documents\\INFORMATIKA \u002723\\SEMS 4\\PEMVIS\\PA (3)\\PA\\PA\\Form10.vb [Design]",
+              "RelativeToolTip": "Form10.vb [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-05-15T05:30:37.707Z",
+              "IsPinned": true,
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Form1.vb",
+              "DocumentMoniker": "C:\\Users\\Asus GK\\Documents\\INFORMATIKA \u002723\\SEMS 4\\PEMVIS\\PA (3)\\PA\\PA\\Form1.vb",
+              "RelativeDocumentMoniker": "Form1.vb",
+              "ToolTip": "C:\\Users\\Asus GK\\Documents\\INFORMATIKA \u002723\\SEMS 4\\PEMVIS\\PA (3)\\PA\\PA\\Form1.vb",
+              "RelativeToolTip": "Form1.vb",
+              "ViewState": "AgIAAEUAAAAAAAAAAAAAwFgAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-04-28T13:22:43.736Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Form2.vb",
+              "DocumentMoniker": "C:\\Users\\Asus GK\\Documents\\INFORMATIKA \u002723\\SEMS 4\\PEMVIS\\PA (3)\\PA\\PA\\Form2.vb",
+              "RelativeDocumentMoniker": "Form2.vb",
+              "ToolTip": "C:\\Users\\Asus GK\\Documents\\INFORMATIKA \u002723\\SEMS 4\\PEMVIS\\PA (3)\\PA\\PA\\Form2.vb",
+              "RelativeToolTip": "Form2.vb",
+              "ViewState": "AgIAAIIAAAAAAAAAAAAcwHAAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-04-28T15:34:23.814Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Form3.vb",
+              "DocumentMoniker": "C:\\Users\\Asus GK\\Documents\\INFORMATIKA \u002723\\SEMS 4\\PEMVIS\\PA (3)\\PA\\PA\\Form3.vb",
+              "RelativeDocumentMoniker": "Form3.vb",
+              "ToolTip": "C:\\Users\\Asus GK\\Documents\\INFORMATIKA \u002723\\SEMS 4\\PEMVIS\\PA (3)\\PA\\PA\\Form3.vb",
+              "RelativeToolTip": "Form3.vb",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAIIAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-04-28T15:41:08.389Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Form4.vb",
+              "DocumentMoniker": "C:\\Users\\Asus GK\\Documents\\INFORMATIKA \u002723\\SEMS 4\\PEMVIS\\PA (3)\\PA\\PA\\Form4.vb",
+              "RelativeDocumentMoniker": "Form4.vb",
+              "ToolTip": "C:\\Users\\Asus GK\\Documents\\INFORMATIKA \u002723\\SEMS 4\\PEMVIS\\PA (3)\\PA\\PA\\Form4.vb",
+              "RelativeToolTip": "Form4.vb",
+              "ViewState": "AgIAAGEAAAAAAAAAAAAwwGIAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-05-05T12:48:14.025Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Form5.vb",
+              "DocumentMoniker": "C:\\Users\\Asus GK\\Documents\\INFORMATIKA \u002723\\SEMS 4\\PEMVIS\\PA (3)\\PA\\PA\\Form5.vb",
+              "RelativeDocumentMoniker": "Form5.vb",
+              "ToolTip": "C:\\Users\\Asus GK\\Documents\\INFORMATIKA \u002723\\SEMS 4\\PEMVIS\\PA (3)\\PA\\PA\\Form5.vb",
+              "RelativeToolTip": "Form5.vb",
+              "ViewState": "AgIAAPEBAAAAAAAAAAAgwAECAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-05-06T05:07:02.785Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Form6.vb",
+              "DocumentMoniker": "C:\\Users\\Asus GK\\Documents\\INFORMATIKA \u002723\\SEMS 4\\PEMVIS\\PA (3)\\PA\\PA\\Form6.vb",
+              "RelativeDocumentMoniker": "Form6.vb",
+              "ToolTip": "C:\\Users\\Asus GK\\Documents\\INFORMATIKA \u002723\\SEMS 4\\PEMVIS\\PA (3)\\PA\\PA\\Form6.vb",
+              "RelativeToolTip": "Form6.vb",
+              "ViewState": "AgIAAOYAAAAAAAAAAAAUwP4AAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-05-09T04:13:03.982Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form7.vb",
+              "DocumentMoniker": "C:\\Users\\Asus GK\\Documents\\INFORMATIKA \u002723\\SEMS 4\\PEMVIS\\PA (3)\\PA\\PA\\Form7.vb",
+              "RelativeDocumentMoniker": "Form7.vb",
+              "ToolTip": "C:\\Users\\Asus GK\\Documents\\INFORMATIKA \u002723\\SEMS 4\\PEMVIS\\PA (3)\\PA\\PA\\Form7.vb",
+              "RelativeToolTip": "Form7.vb",
+              "ViewState": "AgIAAI4AAAAAAAAAAAAqwGkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-05-13T07:20:16.427Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Form8.vb",
+              "DocumentMoniker": "C:\\Users\\Asus GK\\Documents\\INFORMATIKA \u002723\\SEMS 4\\PEMVIS\\PA (3)\\PA\\PA\\Form8.vb",
+              "RelativeDocumentMoniker": "Form8.vb",
+              "ToolTip": "C:\\Users\\Asus GK\\Documents\\INFORMATIKA \u002723\\SEMS 4\\PEMVIS\\PA (3)\\PA\\PA\\Form8.vb",
+              "RelativeToolTip": "Form8.vb",
+              "ViewState": "AgIAAGYAAAAAAAAAAAAIwJcAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-05-13T14:32:00.775Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Form9.vb",
+              "DocumentMoniker": "C:\\Users\\Asus GK\\Documents\\INFORMATIKA \u002723\\SEMS 4\\PEMVIS\\PA (3)\\PA\\PA\\Form9.vb",
+              "RelativeDocumentMoniker": "Form9.vb",
+              "ToolTip": "C:\\Users\\Asus GK\\Documents\\INFORMATIKA \u002723\\SEMS 4\\PEMVIS\\PA (3)\\PA\\PA\\Form9.vb",
+              "RelativeToolTip": "Form9.vb",
+              "ViewState": "AgIAAG4BAAAAAAAAAAAYwHsBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-05-15T03:10:03.954Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Form10.vb",
+              "DocumentMoniker": "C:\\Users\\Asus GK\\Documents\\INFORMATIKA \u002723\\SEMS 4\\PEMVIS\\PA (3)\\PA\\PA\\Form10.vb",
+              "RelativeDocumentMoniker": "Form10.vb",
+              "ToolTip": "C:\\Users\\Asus GK\\Documents\\INFORMATIKA \u002723\\SEMS 4\\PEMVIS\\PA (3)\\PA\\PA\\Form10.vb",
+              "RelativeToolTip": "Form10.vb",
+              "ViewState": "AgIAAMYAAAAAAAAAAAAYwNcAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-05-15T05:31:46.319Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedHeight": 53,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

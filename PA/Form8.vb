@@ -8,7 +8,6 @@ Public Class Form8
     Dim isDragging As Boolean = False
     Dim offset As Point
 
-    ' Windows API for animation
     <DllImport("user32.dll")>
     Private Shared Function AnimateWindow(ByVal hwnd As IntPtr, ByVal dwTime As Integer, ByVal dwFlags As Integer) As Boolean
     End Function
@@ -55,19 +54,17 @@ Public Class Form8
     End Sub
 
     Private Sub Form8_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ' Check user session
+
         If SessionManager.UserID = 0 Then
             MessageBox.Show("Anda belum login atau sesi telah berakhir.", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Me.Close()
             Return
         End If
 
-        ' Setup UI
         pnlSidebar.BackColor = Color.FromArgb(228, 228, 210)
         pnlSidebar.Dock = DockStyle.Left
         pnlSidebar.Width = 200
 
-        ' Setup FlowLayoutPanel
         With flpRiwayat
             .AutoScroll = True
             .BackColor = Color.FromArgb(228, 228, 210)
@@ -89,7 +86,6 @@ Public Class Form8
             btn.Cursor = Cursors.Hand
         Next
 
-        ' Load transaction history
         LoadRiwayatTransaksi()
     End Sub
 
@@ -99,7 +95,6 @@ Public Class Form8
         Try
             If conn.State = ConnectionState.Closed Then conn.Open()
 
-            ' Query untuk mendapatkan transaksi user
             Dim query As String = "SELECT t.transaksi_id, t.tanggal, t.resi, t.total_harga, t.status " &
                                   "FROM transaksi t " &
                                   "WHERE t.user_id = @user_id " &
@@ -110,7 +105,6 @@ Public Class Form8
 
             Using reader As MySqlDataReader = cmd.ExecuteReader()
                 While reader.Read()
-                    ' Create panel for each transaction
                     Dim panel As New Panel With {
                         .Width = flpRiwayat.Width - 30,
                         .Height = 120, ' Diperkecil karena tidak ada tombol detail
@@ -119,7 +113,6 @@ Public Class Form8
                         .BorderStyle = BorderStyle.FixedSingle
                     }
 
-                    ' Add transaction info
                     Dim lblTanggal As New Label With {
                         .Text = "Tanggal: " & Convert.ToDateTime(reader("tanggal")).ToString("dd/MM/yyyy HH:mm"),
                         .Font = New Font("Bell MT", 10, FontStyle.Bold),
@@ -155,7 +148,6 @@ Public Class Form8
                         .AutoSize = True
                     }
 
-                    ' Set status color
                     If reader("status") IsNot DBNull.Value Then
                         Select Case reader("status").ToString().ToLower()
                             Case "pending"
@@ -169,7 +161,6 @@ Public Class Form8
 
                     panel.Controls.Add(lblStatus)
 
-                    ' Add panel to FlowLayoutPanel
                     flpRiwayat.Controls.Add(panel)
                 End While
             End Using

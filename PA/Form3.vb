@@ -34,14 +34,12 @@ Public Class Form3
     Private Const AW_ACTIVATE As Integer = &H20000
 
     Private Sub AnimateTransition(targetForm As Form)
-        ' Menentukan posisi tengah layar
         targetForm.StartPosition = FormStartPosition.Manual
         targetForm.Location = New Point(
         (Screen.PrimaryScreen.WorkingArea.Width - targetForm.Width) \ 2,
         (Screen.PrimaryScreen.WorkingArea.Height - targetForm.Height) \ 2
     )
 
-        ' Animasi transisi
         AnimateWindow(Me.Handle, 300, AW_BLEND Or AW_HIDE)
         targetForm.Show()
         AnimateWindow(targetForm.Handle, 300, AW_BLEND Or AW_ACTIVATE)

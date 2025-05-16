@@ -9,7 +9,6 @@ Public Class Form5
     Dim offset As Point
     Private originalFlowerData As DataTable
     Private currentFlowerData As DataTable
-    ' Windows API for animation
     <DllImport("user32.dll")>
     Private Shared Function AnimateWindow(ByVal hwnd As IntPtr, ByVal dwTime As Integer, ByVal dwFlags As Integer) As Boolean
     End Function
@@ -59,12 +58,10 @@ Public Class Form5
     End Sub
 
     Private Sub LoadDataBunga()
-        ' Pastikan koneksi terbuka
         If conn.State = ConnectionState.Closed Then
             conn.Open()
         End If
 
-        ' Clear existing items
         flpBunga.Controls.Clear()
 
         Try
@@ -72,7 +69,7 @@ Public Class Form5
             Using cmd As New MySqlCommand(query, conn)
                 Using reader As MySqlDataReader = cmd.ExecuteReader()
                     While reader.Read()
-                        ' Buat dan tambahkan kontrol untuk setiap bunga
+                
                         ' ... [kode untuk menampilkan bunga] ...
                     End While
                 End Using
@@ -83,19 +80,16 @@ Public Class Form5
     End Sub
 
     Private Sub ReloadDataBunga(sender As Object, e As EventArgs)
-        ' Method untuk memuat ulang data bunga
         LoadDataBunga()
     End Sub
     Private Sub Form5_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Encoding.RegisterProvider(CodePagesEncodingProvider.Instance)
-        ' Check user session
         If SessionManager.UserID = 0 Then
             MessageBox.Show("Anda belum login atau sesi telah berakhir.", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             AnimateTransition(Form1)
             Return
         End If
 
-        ' Setup UI
         pnlSidebar.BackColor = Color.FromArgb(228, 228, 210)
         pnlSidebar.Dock = DockStyle.Left
         pnlSidebar.Width = 200
@@ -113,12 +107,10 @@ Public Class Form5
             btn.Cursor = Cursors.Hand
         Next
 
-        ' Load flower data
         RefreshDaftarBunga()
         AddHandler Form6.PembayaranBerhasil, AddressOf ReloadDataBunga
     End Sub
 
-    ' Public method to refresh flower list
     Public Sub RefreshDaftarBunga()
         TampilDaftarBunga()
     End Sub
@@ -131,15 +123,12 @@ Public Class Form5
             Dim cmd As New MySqlCommand("SELECT * FROM bunga", conn)
             Dim adapter As New MySqlDataAdapter(cmd)
 
-            ' Simpan data asli
             originalFlowerData = New DataTable()
             adapter.Fill(originalFlowerData)
 
-            ' Buat salinan untuk pencarian
             currentFlowerData = originalFlowerData.Copy()
             conn.Close()
 
-            ' Tampilkan data
             TampilkanDataBunga(currentFlowerData)
 
         Catch ex As Exception
@@ -152,8 +141,7 @@ Public Class Form5
     Private Sub TampilkanDataBunga(data As DataTable)
         flpBunga.Controls.Clear()
 
-        ' Hapus koneksi database di sini karena data sudah disediakan melalui parameter
-
+        
         For Each row As DataRow In data.Rows
             Dim bungaId As Integer = Convert.ToInt32(row("bunga_id"))
             Dim panel As New Panel With {
@@ -164,7 +152,6 @@ Public Class Form5
                 .Tag = bungaId
             }
 
-            ' Flower name label
             Dim lblNama As New Label With {
                 .Text = row("nama").ToString(),
                 .Top = 10,
@@ -178,7 +165,6 @@ Public Class Form5
             }
             panel.Controls.Add(lblNama)
 
-            ' Flower image
             Dim pic As New PictureBox With {
                 .Width = 140,
                 .Height = 140,
@@ -198,7 +184,6 @@ Public Class Form5
             End Try
             panel.Controls.Add(pic)
 
-            ' Price label
             Dim lblHarga As New Label With {
                     .Text = "Rp " & Convert.ToInt32(row("harga")).ToString("N0"),
                     .Top = 185,
@@ -212,7 +197,6 @@ Public Class Form5
                 }
             panel.Controls.Add(lblHarga)
 
-            ' Stock label
             Dim lblStok As New Label With {
                 .Text = "Stok: " & row("stok").ToString(),
                 .Top = 215,
@@ -315,20 +299,16 @@ Public Class Form5
     Private Sub btnCart_Click(sender As Object, e As EventArgs)
         Dim user_id As Integer = SessionManager.UserID
 
-        ' Cek login
         If user_id = 0 Then
             MessageBox.Show("Anda harus login terlebih dahulu.", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Return
         End If
 
-        ' Dapatkan bunga_id dari Tag tombol
         Dim btnCart As Button = CType(sender, Button)
         Dim bunga_id As Integer = CInt(btnCart.Tag)
 
-        ' Dapatkan panel utama yang berisi kontrol jumlah
         Dim panelBunga As Panel = CType(btnCart.Parent, Panel)
 
-        ' Cari panel quantity yang berisi tombol +/-
         Dim pnlQty As Panel = panelBunga.Controls.OfType(Of Panel)().FirstOrDefault(
         Function(p) p.Controls.OfType(Of Button)().Any())
 
@@ -337,7 +317,6 @@ Public Class Form5
             Return
         End If
 
-        ' Dapatkan label jumlah
         Dim lblJumlah As Label = pnlQty.Controls.OfType(Of Label)().FirstOrDefault()
 
         If lblJumlah Is Nothing Then
@@ -345,20 +324,17 @@ Public Class Form5
             Return
         End If
 
-        ' Konversi jumlah ke integer
         Dim jumlah As Integer
         If Not Integer.TryParse(lblJumlah.Text, jumlah) Then
             MessageBox.Show("Jumlah tidak valid.", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Return
         End If
 
-        ' Validasi jumlah
         If jumlah <= 0 Then
             MessageBox.Show("Jumlah tidak boleh 0 atau kurang.", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Return
         End If
 
-        ' Cek stok
         Dim stok As Integer = 0
         Try
             If conn.State = ConnectionState.Closed Then conn.Open()
@@ -381,11 +357,9 @@ Public Class Form5
             If conn.State = ConnectionState.Open Then conn.Close()
         End Try
 
-        ' Tambahkan ke keranjang
         Try
             If conn.State = ConnectionState.Closed Then conn.Open()
 
-            ' Cek apakah item sudah ada di keranjang
             Dim queryCheck As String = "SELECT jumlah FROM keranjang WHERE user_id = @user_id AND bunga_id = @bunga_id"
             Dim existingJumlah As Integer = 0
 
@@ -400,9 +374,7 @@ Public Class Form5
                 End Using
             End Using
 
-            ' Update atau insert data
             If existingJumlah > 0 Then
-                ' Update jumlah jika sudah ada
                 Dim updateQuery As String = "UPDATE keranjang SET jumlah = jumlah + @jumlah " &
                                       "WHERE user_id = @user_id AND bunga_id = @bunga_id"
                 Using updateCmd As New MySqlCommand(updateQuery, conn)
@@ -412,7 +384,6 @@ Public Class Form5
                     updateCmd.ExecuteNonQuery()
                 End Using
             Else
-                ' Insert baru jika belum ada
                 Dim insertQuery As String = "INSERT INTO keranjang (user_id, bunga_id, jumlah) " &
                                       "VALUES (@user_id, @bunga_id, @jumlah)"
                 Using insertCmd As New MySqlCommand(insertQuery, conn)
@@ -423,7 +394,6 @@ Public Class Form5
                 End Using
             End If
 
-            ' Reset jumlah dan tampilkan pesan sukses
             lblJumlah.Text = "0"
             MessageBox.Show("Item berhasil ditambahkan ke keranjang.", "Sukses",
                       MessageBoxButtons.OK, MessageBoxIcon.Information)
@@ -475,7 +445,6 @@ Public Class Form5
             Else
                 Dim filterExpression As String = $"nama LIKE '%{searchText}%'"
 
-                ' Tambahkan filter deskripsi hanya jika kolomnya ada
                 If originalFlowerData.Columns.Contains("deskripsi") Then
                     filterExpression &= $" OR deskripsi LIKE '%{searchText}%'"
                 End If
@@ -498,15 +467,12 @@ Public Class Form5
             Return
         End If
 
-        ' Tampilkan Form8 (riwayat)
         Form8.BukaFormRiwayat()
 
-        ' Tutup form saat ini (Form5)
-        Me.Close()
+       Me.Close()
     End Sub
 
     Private Sub Form5_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
-        ' Refresh data setiap kali form diaktifkan
         RefreshDaftarBunga()
     End Sub
 

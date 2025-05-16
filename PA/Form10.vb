@@ -4,6 +4,7 @@ Imports MySql.Data.MySqlClient
 Imports PA.Form2
 Imports System.IO
 
+
 Public Class Form10
     Dim isDragging As Boolean = False
     Dim offset As Point

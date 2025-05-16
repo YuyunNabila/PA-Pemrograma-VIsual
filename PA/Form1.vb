@@ -11,6 +11,7 @@ Public Class Form1
         End If
     End Sub
 
+    
     Private Sub Form_MouseMove(sender As Object, e As MouseEventArgs) Handles MyBase.MouseMove
         If isDragging Then
             Me.Location = New Point(Me.Left + e.X - offset.X, Me.Top + e.Y - offset.Y)

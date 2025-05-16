@@ -35,14 +35,12 @@ Public Class Form2
     Private Const AW_ACTIVATE As Integer = &H20000
 
     Private Sub AnimateTransition(targetForm As Form)
-        ' Menentukan posisi tengah layar
         targetForm.StartPosition = FormStartPosition.Manual
         targetForm.Location = New Point(
         (Screen.PrimaryScreen.WorkingArea.Width - targetForm.Width) \ 2,
         (Screen.PrimaryScreen.WorkingArea.Height - targetForm.Height) \ 2
     )
 
-        ' Animasi transisi
         AnimateWindow(Me.Handle, 300, AW_BLEND Or AW_HIDE)
         targetForm.Show()
         AnimateWindow(targetForm.Handle, 300, AW_BLEND Or AW_ACTIVATE)
@@ -59,11 +57,9 @@ Public Class Form2
         btn.ForeColor = Color.Black
         btn.Font = New Font("Lucida Bright", 15, FontStyle.Regular)
 
-        ' Atur ukuran tombol di sini
         btn.Width = 105
         btn.Height = 45
 
-        ' Buat rounded rectangle
         Dim path As New Drawing2D.GraphicsPath()
         Dim radius As Integer = 20 ' Seberapa lengkung sudut
 
@@ -79,19 +75,16 @@ Public Class Form2
 
         btn.Region = New Region(path)
 
-        ' Tambah event hover
         AddHandler btn.MouseEnter, AddressOf Button_Hover
         AddHandler btn.MouseLeave, AddressOf Button_Normal
     End Sub
 
 
-    ' Saat hover (masuk)
     Private Sub Button_Hover(sender As Object, e As EventArgs)
         Dim btn As Button = CType(sender, Button)
         btn.BackColor = Color.FromArgb(167, 108, 95) ' Merah pastel
     End Sub
 
-    ' Saat hover keluar (normal lagi)
     Private Sub Button_Normal(sender As Object, e As EventArgs)
         Dim btn As Button = CType(sender, Button)
         btn.BackColor = Color.FromArgb(190, 204, 152) ' Hijau pastel lagi
@@ -104,10 +97,8 @@ Public Class Form2
 
     Private Sub chkShowPassword_CheckedChanged(sender As Object, e As EventArgs) Handles chkShowPassword.CheckedChanged
         If chkShowPassword.Checked Then
-            ' Tampilkan teks asli
             txtPassword.PasswordChar = ChrW(0)
         Else
-            ' Sembunyikan dengan karakter bulat
             txtPassword.PasswordChar = "●"c
         End If
     End Sub
@@ -125,7 +116,6 @@ Public Class Form2
         Try
             If conn.State = ConnectionState.Closed Then conn.Open()
 
-            ' Periksa apakah username dan password cocok, dan ambil user_id serta tipe pengguna
             Dim cmd As New MySqlCommand("SELECT user_id, tipe FROM user WHERE username = @username AND password = @password", conn)
             cmd.Parameters.AddWithValue("@username", username)
             cmd.Parameters.AddWithValue("@password", password)

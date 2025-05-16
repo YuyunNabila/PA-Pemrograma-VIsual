@@ -8,7 +8,6 @@ Public Class Form6
     Dim isDragging As Boolean = False
     Dim offset As Point
     Public Event PembayaranBerhasil As EventHandler
-    ' Windows API for window animation
     <DllImport("user32.dll")>
     Private Shared Function AnimateWindow(ByVal hwnd As IntPtr, ByVal dwTime As Integer, ByVal dwFlags As Integer) As Boolean
     End Function
@@ -50,12 +49,10 @@ Public Class Form6
         Encoding.RegisterProvider(CodePagesEncodingProvider.Instance)
         StyleButton(btnBayar)
 
-        ' Setup UI
         pnlSidebar.BackColor = Color.FromArgb(228, 228, 210)
         pnlSidebar.Dock = DockStyle.Left
         pnlSidebar.Width = 200
 
-        ' Setup menu buttons
         Dim tombolMenu() As Button = {btnDaftarBunga, btnKeranjang, btnRiwayatUser, btnLogout}
         For Each btn In tombolMenu
             btn.ForeColor = Color.FromArgb(40, 40, 40)
@@ -69,17 +66,14 @@ Public Class Form6
             btn.Cursor = Cursors.Hand
         Next
 
-        ' Setup FlowLayoutPanel
         flpKeranjang.AutoScroll = True
         flpKeranjang.WrapContents = False
         flpKeranjang.FlowDirection = FlowDirection.TopDown
 
-        ' Check user session
         If SessionManager.UserID = 0 Then
             MessageBox.Show("Anda belum login atau sesi telah berakhir.", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             AnimateTransition(Form1)
         Else
-            ' Open connection and load cart
             If conn.State = ConnectionState.Closed Then
                 Try
                     conn.Open()
@@ -102,7 +96,6 @@ Public Class Form6
         btn.Width = 150
         btn.Height = 40
 
-        ' Create rounded corners
         Dim path As New Drawing2D.GraphicsPath()
         Dim radius As Integer = 20
         path.AddArc(0, 0, radius, radius, 180, 90)
@@ -127,10 +120,8 @@ Public Class Form6
     End Sub
 
     Public Sub LoadKeranjang()
-        ' Clear existing items
         flpKeranjang.Controls.Clear()
 
-        ' Check if user is logged in
         If SessionManager.UserID = 0 Then
             Dim lblKosong As New Label()
             lblKosong.Text = "Silakan login terlebih dahulu"
@@ -159,7 +150,6 @@ Public Class Form6
                     While reader.Read()
                         adaData = True
 
-                        ' Create item panel
                         Dim panelItem As New Panel()
                         panelItem.Width = flpKeranjang.Width - 25
                         panelItem.Height = 100
@@ -167,14 +157,12 @@ Public Class Form6
                         panelItem.BackColor = Color.FromArgb(228, 228, 210)
                         panelItem.BorderStyle = BorderStyle.FixedSingle
 
-                        ' Item number
                         Dim lblNomor As New Label()
                         lblNomor.Text = nomor.ToString()
                         lblNomor.Location = New Point(10, 40)
                         lblNomor.AutoSize = True
                         panelItem.Controls.Add(lblNomor)
 
-                        ' Flower image
                         Dim pbGambar As New PictureBox()
                         pbGambar.SizeMode = PictureBoxSizeMode.Zoom
                         pbGambar.Size = New Size(80, 80)
@@ -183,18 +171,14 @@ Public Class Form6
                         Try
                             Dim pathGambar As String = reader("gambar").ToString()
 
-                            ' Cek jika path kosong atau null
                             If String.IsNullOrEmpty(pathGambar) Then
                                 pbGambar.Image = My.Resources._1 ' Gambar default dari resources
                             Else
-                                ' Cek apakah path adalah path lengkap atau relatif
                                 If Not IO.Path.IsPathRooted(pathGambar) Then
-                                    ' Jika path relatif, gabungkan dengan direktori aplikasi
                                     pathGambar = IO.Path.Combine(Application.StartupPath, pathGambar)
                                 End If
 
                                 If IO.File.Exists(pathGambar) Then
-                                    ' Load gambar dengan cara yang lebih aman
                                     Using stream As New IO.FileStream(pathGambar, IO.FileMode.Open, IO.FileAccess.Read)
                                         pbGambar.Image = Image.FromStream(stream)
                                     End Using
@@ -203,16 +187,13 @@ Public Class Form6
                                 End If
                             End If
                         Catch ex As Exception
-                            ' Jika terjadi error, gunakan gambar default
                             pbGambar.Image = My.Resources._1
-                            ' Untuk debugging, bisa ditambahkan:
-                            ' Console.WriteLine("Error loading image: " & ex.Message)
+                            
                         Finally
-                            ' Pastikan PictureBox ditambahkan ke panel
+                           
                             panelItem.Controls.Add(pbGambar)
                         End Try
 
-                        ' Flower name
                         Dim lblNama As New Label()
                         lblNama.Text = reader("nama_bunga").ToString()
                         lblNama.Location = New Point(130, 15)
@@ -220,7 +201,6 @@ Public Class Form6
                         lblNama.Font = New Font("Bell MT", 10, FontStyle.Bold)
                         panelItem.Controls.Add(lblNama)
 
-                        ' Quantity
                         Dim lblJumlah As New Label()
                         lblJumlah.Text = "Jumlah: " & reader("jumlah").ToString()
                         lblJumlah.Location = New Point(130, 35)
@@ -228,7 +208,6 @@ Public Class Form6
                         lblJumlah.Font = New Font("Bell MT", 10, FontStyle.Bold)
                         panelItem.Controls.Add(lblJumlah)
 
-                        ' Price
                         Dim lblHarga As New Label()
                         lblHarga.Text = "Harga: Rp " & Convert.ToInt32(reader("harga")).ToString("N0")
                         lblHarga.Location = New Point(130, 55)
@@ -236,7 +215,6 @@ Public Class Form6
                         lblHarga.Font = New Font("Bell MT", 10, FontStyle.Bold)
                         panelItem.Controls.Add(lblHarga)
 
-                        ' Subtotal
                         Dim lblSubtotal As New Label()
                         lblSubtotal.Text = "Subtotal: Rp " & Convert.ToInt32(reader("subtotal")).ToString("N0")
                         lblSubtotal.Location = New Point(130, 75)
@@ -244,7 +222,6 @@ Public Class Form6
                         lblSubtotal.Font = New Font("Bell MT", 10, FontStyle.Bold)
                         panelItem.Controls.Add(lblSubtotal)
 
-                        ' Delete button
                         Dim btnHapus As New Button()
                         btnHapus.Text = "Hapus"
                         btnHapus.Size = New Size(80, 30)
@@ -256,14 +233,12 @@ Public Class Form6
                         AddHandler btnHapus.Click, AddressOf HapusItem
                         panelItem.Controls.Add(btnHapus)
 
-                        ' Add to flow layout
                         flpKeranjang.Controls.Add(panelItem)
 
                         totalHarga += Convert.ToInt32(reader("subtotal"))
                         nomor += 1
                     End While
 
-                    ' Show empty message if no items
                     If Not adaData Then
                         Dim lblKosong As New Label()
                         lblKosong.Text = "Keranjang belanja kosong"
@@ -274,7 +249,6 @@ Public Class Form6
                         flpKeranjang.Controls.Add(lblKosong)
                     End If
 
-                    ' Update total price
                     lblTotalHarga.Text = "Total: Rp " & totalHarga.ToString("N0")
                 End Using
             End Using
@@ -294,7 +268,6 @@ Public Class Form6
                 cmd.ExecuteNonQuery()
             End Using
 
-            ' Refresh cart
             LoadKeranjang()
         Catch ex As Exception
             MessageBox.Show("Gagal menghapus item: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -302,7 +275,7 @@ Public Class Form6
     End Sub
 
     Private Sub btnBayar_Click(sender As Object, e As EventArgs) Handles btnBayar.Click
-        ' Validasi koneksi database
+
         If conn.State = ConnectionState.Closed Then
             Try
                 conn.Open()
@@ -313,7 +286,6 @@ Public Class Form6
             End Try
         End If
 
-        ' Cek apakah keranjang kosong
         Dim itemCount As Integer = 0
         Try
             Using cmdCount As New MySqlCommand("SELECT COUNT(*) FROM keranjang WHERE user_id = @UserID", conn)
@@ -332,17 +304,15 @@ Public Class Form6
             Return
         End Try
 
-        ' Persiapan transaksi
         Dim transaksiID As Integer = 0
         Dim totalHarga As Integer = 0
         Dim nomorResi As String = GenerateResi()
         Dim transaction As MySqlTransaction = Nothing
 
         Try
-            ' Mulai transaksi database
+
             transaction = conn.BeginTransaction()
 
-            ' 1. Insert header transaksi
             Dim queryTransaksi As String = "INSERT INTO transaksi (user_id, tanggal, resi, total_harga, status) " &
                                 "VALUES (@UserID, @Tanggal, @Resi, 0, 'Pending')"
 
@@ -352,13 +322,10 @@ Public Class Form6
                 cmdTrans.Parameters.AddWithValue("@Resi", nomorResi)
                 cmdTrans.ExecuteNonQuery()
             End Using
-
-            ' 2. Ambil ID transaksi yang baru dibuat
             Using cmdLastID As New MySqlCommand("SELECT LAST_INSERT_ID()", conn, transaction)
                 transaksiID = Convert.ToInt32(cmdLastID.ExecuteScalar())
             End Using
 
-            ' 3. Dapatkan semua item keranjang
             Dim cartItems As New List(Of (bunga_id As Integer, jumlah As Integer, harga As Integer, stok As Integer))()
 
             Using cmdItems As New MySqlCommand("SELECT k.bunga_id, k.jumlah, b.harga, b.stok " &
@@ -385,11 +352,9 @@ Public Class Form6
                 End Using
             End Using
 
-            ' 4. Proses setiap item
             For Each item In cartItems
                 Dim subtotal As Integer = item.jumlah * item.harga
 
-                ' Insert detail transaksi
                 Using cmdDetail As New MySqlCommand("INSERT INTO transaksi_detail " &
                   "(transaksi_id, bunga_id, jumlah, harga_satuan, subtotal, status) " &
                   "VALUES (@TransID, @BungaID, @Jumlah, @Harga, @Subtotal, @Status)",
@@ -403,7 +368,6 @@ Public Class Form6
                     cmdDetail.ExecuteNonQuery()
                 End Using
 
-                ' Update stok dengan validasi tambahan
                 Using cmdUpdate As New MySqlCommand("UPDATE bunga SET stok = stok - @Jumlah " &
                                              "WHERE bunga_id = @BungaID AND stok >= @Jumlah",
                                              conn, transaction)
@@ -419,7 +383,6 @@ Public Class Form6
                 totalHarga += subtotal
             Next
 
-            ' 5. Update total transaksi
             Using cmdUpdateTotal As New MySqlCommand("UPDATE transaksi SET total_harga = @Total " &
                                               "WHERE transaksi_id = @TransID",
                                               conn, transaction)
@@ -428,37 +391,29 @@ Public Class Form6
                 cmdUpdateTotal.ExecuteNonQuery()
             End Using
 
-            ' 6. Kosongkan keranjang
             Using cmdClear As New MySqlCommand("DELETE FROM keranjang WHERE user_id = @UserID",
                                          conn, transaction)
                 cmdClear.Parameters.AddWithValue("@UserID", SessionManager.UserID)
                 cmdClear.ExecuteNonQuery()
             End Using
 
-            ' Commit transaksi jika semua berhasil
             transaction.Commit()
 
-            ' Tampilkan notifikasi sukses
             MessageBox.Show($"Pembayaran berhasil! No. Resi: {nomorResi}",
                       "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
-            ' Refresh data
             LoadKeranjang()
-
-            ' Beritahu form lain untuk refresh data
             RaiseEvent PembayaranBerhasil(Me, EventArgs.Empty)
 
-            ' Buka Form7 (form resi)
             Dim formResi As New Form7(transaksiID, totalHarga, nomorResi)
             formResi.Show()
 
         Catch ex As Exception
-            ' Rollback jika ada error
+   
             If transaction IsNot Nothing Then
                 Try
                     transaction.Rollback()
                 Catch rollbackEx As Exception
-                    ' Log error rollback jika diperlukan
                     Debug.WriteLine("Error saat rollback: " & rollbackEx.Message)
                 End Try
             End If
@@ -466,7 +421,6 @@ Public Class Form6
             MessageBox.Show("Terjadi kesalahan saat proses pembayaran: " & ex.Message,
                       "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Finally
-            ' Pastikan transaction di-dispose
             If transaction IsNot Nothing Then
                 transaction.Dispose()
             End If
@@ -494,7 +448,7 @@ Public Class Form6
             MessageBox.Show("Anda belum login atau sesi telah berakhir.", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             AnimateTransition(Form1)
         Else
-            ' Refresh cart when cart button is clicked
+         
             LoadKeranjang()
         End If
     End Sub
@@ -513,10 +467,8 @@ Public Class Form6
             Return
         End If
 
-        ' Tampilkan Form8 (riwayat)
         Form8.BukaFormRiwayat()
 
-        ' Tutup form saat ini (Form5)
         Me.Close()
     End Sub
 
